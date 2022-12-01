@@ -5,9 +5,11 @@ import (
 	"fmt"
 	"os"
 	"strconv"
+	"sort"
 )
 var per_elf = 0
 var richest_elf = 0
+var all_elves []int
 
 func check(e error) {
 	if e != nil {
@@ -32,6 +34,7 @@ func main() {
 			if per_elf > richest_elf {
 				richest_elf = per_elf
 			}
+			all_elves = append(all_elves, per_elf)
 			per_elf = 0
 		} else {
 			calories, err := strconv.Atoi(line)
@@ -39,5 +42,8 @@ func main() {
 			per_elf += calories
 		}
 	}
-	fmt.Printf("The Elf with the most calories has %d of them\n", richest_elf)
+	sort.Ints(all_elves)
+	slc := all_elves[len(all_elves)-3:]
+	
+	fmt.Printf("The total of the top three elves is %d\n", slc[0] + slc[1] + slc[2])
 }
