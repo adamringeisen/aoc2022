@@ -13,7 +13,7 @@ func main() {
 	for i := 0; i<len(test_string)-3; i++ {
 		
 		kit := string(test_string[i]) + string(test_string[i+1]) + string(test_string[i+2]) + string(test_string[i+3])
-		if strings.Count(kit, string(kit[0])) == 1 && strings.Count(kit, string(kit[1])) == 1 && strings.Count(kit, string(kit[2])) == 1 && strings.Count(kit, string(kit[3])) == 1 {
+		if strings.Count(kit, string(kit[0])) == 1 && strings.Count(kit, string(kit[1])) == 1 && strings.Count(kit, string(kit[2])) == 1 && strings.Count(kit, string(kit[3]))  == 1 && strings.Count(kit, string(kit[4])) == 1 && strings.Count(kit, string(kit[5])) == 1 && strings.Count(kit, string(kit[])) == 1  {
 			
 		fmt.Printf("String: %s Index: %d\n", kit, i+4)
 		break
